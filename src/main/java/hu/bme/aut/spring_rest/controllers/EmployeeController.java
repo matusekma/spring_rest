@@ -55,7 +55,7 @@ public class EmployeeController {
 
     @PutMapping("/employees/{id}")
     ResponseEntity<?> replaceEmployee(@PathVariable Long id,
-                                          @RequestBody Employee newEmployee) {
+                                      @RequestBody Employee newEmployee) {
         Employee updatedEmployee = repository.findById(id)
                 .map(employee -> {
                     employee.setName(newEmployee.getName());
